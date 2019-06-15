@@ -1,3 +1,8 @@
+:root {
+  --cor-principal: coral;
+  --cor-secundaria: chocolate;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +42,7 @@ body {
 #navbar ul li:hover {
   /* Adicionando a "mãozinha" */
   cursor: pointer;
-  background: coral;
+  background: var(--cor-principal);
   color: #fff;
 }
 
@@ -59,7 +64,7 @@ body {
   background: #e7e7e7;
 }
 
-#navbar ul li:hover ul li a{
+#navbar ul li:hover ul li a {
   color: #333;
 }
 
@@ -71,9 +76,40 @@ body {
 #navbar ul li:hover ul li span {
   float: right;
   color: #fff;
-  background: coral;
+  background: var(--cor-principal);
   padding: 0.2rem 0.5rem;
   text-align: center;
   font-size: 0.8rem;
   border-radius: 5px;
+}
+
+#navbar ul li:hover ul li:hover span {
+  background: var(--cor-secundaria);
+}
+
+#principal {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  background: var(--cor-principal);
+}
+
+#principal h1 {
+  color: #f4f4f4;
+  font-size: 4rem;
+}
+
+@media(max-width: 600px) {
+  #navbar ul li {
+    display: block;
+  }
+
+  #navbar ul li:hover ul {
+    width: 100%;
+    position: relative;
+  }
 }
